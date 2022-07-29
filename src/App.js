@@ -6,7 +6,7 @@ export default class Calculadora extends Component {
   render() {
     return (
       <div>
-        <h2>Oi</h2>
+       
         <Main />
       </div>
     );

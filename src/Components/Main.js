@@ -2,32 +2,14 @@ import React from "react";
 import "../styles.css";
 import styled from "styled-components";
 
- const Container = styled.div`
-    background-color:#2f4f4f;
- `;
-/*const Container = styled.section`
+
+const Container = styled.main`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .box--one {
-    width: 60%;
-    height: 100vh;
-
-    background-image: url("https://c.tenor.com/YAOhbZ5GZy4AAAAd/nazar%C3%A9.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .box--two {
-    width: 40%;
-    height: 94vh;
-  }
-  button {
-    background-color: #2f4f4f;
-    width: 4vw;
-    height: 6vh;
-    border-radius: 10px;
-    cursor: pointer;
-  }
+   
+  
+ 
   input {
     width: 12vw;
     height: 4vh;
@@ -40,29 +22,12 @@ import styled from "styled-components";
     margin-left: 10vw;
     margin-top: 4vh;
   }
-  .bottons {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-wrap: wrap;
-
-    width: 30vw;
-    height: 60vh;
-    margin-top: 4vh;
-    margin-left: 6vw;
-  }
+  
   .apagar {
-    height: 28vh;
-    width: 3vw;
-    margin-left: 6vw;
+    
   }
   .others {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 10vw;
-    height: 30vh;
+   
   }
   h2 {
     font-size: 4vh;
@@ -78,9 +43,66 @@ import styled from "styled-components";
     width: 7vw;
     height: 5vh;
     padding-left: 2vw;
+    padding-top:0.5vh;
   }
-`;*/
+`;
+   const BoxOne = styled.section`
+   
+    width: 60%;
+    height: 100vh;
 
+    background-image: url("https://c.tenor.com/YAOhbZ5GZy4AAAAd/nazar%C3%A9.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+   `;
+    const BoxTwo = styled.section`
+        
+        width: 40%;
+        height: 94vh;
+    `;
+
+    const Buttons = styled.div`
+       
+                                                                           
+    `;
+     const Botoes = styled.div`
+         
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        width: 30vw;
+        height: 55vh;
+        margin-top: 4vh;
+        margin-left: 6vw;
+     `;
+     const Apagar = styled.button`
+         height: 26vh;
+         width: 3vw;
+         margin-left: 6vw;
+         background-color: #2f4f4f;
+         
+         border-radius: 10px;
+         cursor: pointer;
+     `;
+      const Others = styled.div`
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+           flex-wrap: wrap;
+          width: 10vw;
+          height: 30vh;
+          button {
+            background-color: #2f4f4f;
+            width: 4vw;
+            height: 6vh;
+            border-radius: 10px;
+            cursor: pointer;
+          }
+      `;
+  
 export default class Main extends React.Component {
   state = {
     numberOne: "",
@@ -135,7 +157,7 @@ export default class Main extends React.Component {
     });
   };
   deletar = () => {
-    //const { numberOne, numberTwo } = this.state;
+   
     this.setState({
       numberOne: "",
       numberTwo: "",
@@ -145,9 +167,9 @@ export default class Main extends React.Component {
   render() {
     return (
       <Container>
-        <section className="box--one"></section>
+        <BoxOne></BoxOne>
 
-        <section className="box--two">
+        <BoxTwo>
           <div>
             <h1>Calculadora - React App</h1>
             <input
@@ -165,22 +187,22 @@ export default class Main extends React.Component {
             <h2>Resultado</h2>
             <p>{this.state.result}</p>
           </div>
-          <div className="bottons">
+          <Botoes>
             <div>
-              <button onClick={this.deletar} className="apagar">
+              <Apagar onClick={this.deletar}>
                 C
-              </button>
+              </Apagar>
             </div>
-            <div className="others">
+            <Others>
               <button onClick={this.multiplicacao}>x</button>
               <button onClick={this.adisao}>+</button>
               <button onClick={this.subtracao}>-</button>
               <button onClick={this.exponencial}>Exp</button>
               <button onClick={this.divisao}>/</button>
               <button onClick={this.resto}>%</button>
-            </div>
-          </div>
-        </section>
+            </Others>
+          </Botoes>
+        </BoxTwo>
       </Container>
     );
   }
